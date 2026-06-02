@@ -4,67 +4,315 @@
 .headerBg {
   background-image: url(../../../assets/header.png);
   width: 100%;
-  object-fit: cover;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   z-index: 2;
-  height: 100vh;
-  padding-top: 220px;
-  padding-bottom: 20px;
-  background-position: center top;
+  min-height: 780px;
+  padding-top: 132px;
+  padding-bottom: 72px;
+  background-position: center center;
+  display: flex;
+  align-items: center;
 
   @media (max-width: 850px) {
-    height: 500px;
-    padding: 100px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: auto;
+    padding: 110px 0px 58px;
+    background-position: 62% center;
   }
   @media (max-width: $xs) {
-    height: 350px;
-    padding: 50px 0px;
+    padding: 94px 0px 44px;
   }
 
-  .end {
-    display: flex;
-    flex-direction: column;
-    max-width: 460px;
+  .heroGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) minmax(320px, 430px);
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
     width: 100%;
-    margin-left: auto;
-    @media (max-width: 850px) {
-      margin-left: 0px;
+
+    @media (max-width: 980px) {
+      grid-template-columns: 1fr;
+      gap: 28px;
     }
   }
 
-  .helveticaHeading {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .copy {
+    max-width: 680px;
+    width: 100%;
+    color: #fff;
   }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    max-width: 100%;
+    padding: 9px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
   h1 {
     color: #fff;
-    letter-spacing: -1.5px;
     font-weight: 800;
-    font-size: 70px;
+    font-size: 64px;
+    line-height: 1.04;
+    letter-spacing: 0;
+    max-width: 680px;
 
-    @media (max-width: $xs) {
-      font-size: 59px;
+    @media (max-width: 980px) {
+      font-size: 48px;
     }
-    @media (max-width: $xxs) {
-      font-size: 50px;
+    @media (max-width: $xs) {
+      font-size: 38px;
     }
   }
 
-  h6 {
-    font-size: 27px;
+  .subText {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 19px;
     font-weight: 500;
-    line-height: 1.3em;
-    letter-spacing: 0.5px;
-    color: #fff;
+    line-height: 1.7;
+    max-width: 640px;
+    margin-top: 22px;
+
     @media (max-width: $xs) {
-      font-size: 25px;
+      font-size: 16px;
+      line-height: 1.55;
     }
-    @media (max-width: $xxs) {
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .primaryAction,
+  .secondaryAction {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease, border-color 0.25s ease,
+      color 0.25s ease, transform 0.25s ease;
+  }
+
+  .primaryAction {
+    background-color: #19a4c7;
+    color: #fff;
+    border: 1px solid #19a4c7;
+
+    &:hover {
+      background-color: #0d7590;
+      border-color: #0d7590;
+      transform: translateY(-2px);
+    }
+  }
+
+  .secondaryAction {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    &:hover {
+      background-color: #fff;
+      color: #0a4354;
+      transform: translateY(-2px);
+    }
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 650px;
+    margin-top: 30px;
+
+    @media (max-width: $xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stat {
+    min-height: 96px;
+    padding: 17px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 8px;
+    background-color: rgba(6, 35, 45, 0.6);
+    backdrop-filter: blur(12px);
+
+    span {
+      display: block;
+      color: #8fe3f2;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 700;
+    }
+  }
+
+  .workflowCard {
+    width: 100%;
+    max-width: 430px;
+    margin-left: auto;
+    padding: 22px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.94);
+    box-shadow: 0px 28px 70px rgba(0, 0, 0, 0.25);
+    color: #10272f;
+
+    @media (max-width: 980px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $xs) {
+      padding: 18px;
+    }
+  }
+
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #d9e6e9;
+
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #18a4c7;
+      box-shadow: 0px 0px 0px 6px rgba(24, 164, 199, 0.16);
+    }
+
+    p {
+      color: #14323a;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 800;
+    }
+  }
+
+  .patientRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #eef8fa;
+
+    strong {
+      display: block;
+      color: #10272f;
       font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: #48636b;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    span {
+      white-space: nowrap;
+      padding: 7px 9px;
+      border-radius: 999px;
+      background-color: #fff;
+      color: #0c7892;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 800;
+    }
+  }
+
+  ul {
+    display: grid;
+    gap: 10px;
+    margin: 18px 0px;
+
+    li {
+      position: relative;
+      padding-left: 28px;
+      color: #183a43;
+      font-size: 15px;
+      line-height: 23px;
+      font-weight: 700;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 4px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background-color: #19a4c7;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 7px;
+        width: 5px;
+        height: 9px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .cardMetric {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #123f4d;
+
+    strong {
+      color: #fff;
+      font-size: 42px;
+      line-height: 42px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
     }
   }
 }
@@ -76,45 +324,210 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: #000;
-  opacity: 0.4;
+  background: linear-gradient(
+    90deg,
+    rgba(3, 35, 45, 0.88) 0%,
+    rgba(3, 35, 45, 0.74) 41%,
+    rgba(3, 35, 45, 0.36) 100%
+  );
   z-index: -1;
 }
 
 .headerContact {
-  z-index: 10;
   position: relative;
-  padding-bottom: 80px;
+  z-index: 3;
+  padding: 88px 0px;
+  background-color: #f5fafb;
+
   @media (max-width: $xs) {
-    padding-bottom: 40px;
+    padding: 52px 0px;
   }
-  img {
-    margin-top: -45px;
-    max-width: 100%;
-    height: auto;
-  }
-  .message {
-    font-size: 17px;
-    color: #000;
-    font-weight: 400;
-    max-width: 210px;
-    width: 100%;
-    position: absolute;
-    top: 35px;
-    left: 15%;
+
+  .contactGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 560px) minmax(0, 610px);
+    align-items: center;
+    justify-content: space-between;
+    gap: 56px;
+
     @media (max-width: $sm) {
-      position: relative;
-      top: 0px;
-      left: 0px;
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+  }
+
+  .contactMedia {
+    position: relative;
+    min-height: 430px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 24px 60px rgba(15, 50, 60, 0.16);
+    background-color: #e7f2f4;
+
+    @media (max-width: $xs) {
+      min-height: 300px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+
+      @media (max-width: $xs) {
+        min-height: 300px;
+      }
+    }
+  }
+
+  .message {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    max-width: 340px;
+    padding: 18px 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.94);
+    box-shadow: 0px 16px 40px rgba(15, 50, 60, 0.18);
+
+    @media (max-width: $xs) {
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 15px;
+    }
+
+    span {
+      display: block;
+      color: #1687a4;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    p {
+      color: #10272f;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 800;
+
+      @media (max-width: $xs) {
+        font-size: 17px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .contactCopy {
+    max-width: 610px;
+    width: 100%;
+  }
+
+  .kicker {
+    color: #1687a4;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    color: #10272f;
+    font-size: 44px;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: 0;
+    max-width: 560px;
+
+    @media (max-width: $xs) {
+      font-size: 32px;
     }
   }
 
   .para {
-    color: #333333;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 20px 0px;
-    max-width: 700px;
+    color: #425e66;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin: 22px 0px 0px;
+    max-width: 590px;
     width: 100%;
+
+    @media (max-width: $xs) {
+      font-size: 16px;
+      line-height: 1.55;
+    }
+  }
+
+  .careList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+
+    @media (max-width: $xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .careItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    min-height: 74px;
+    padding: 15px;
+    border: 1px solid #d7e9ed;
+    border-radius: 8px;
+    background-color: #fff;
+
+    span {
+      position: relative;
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: #19a4c7;
+      margin-top: 1px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 6px;
+        height: 11px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    p {
+      color: #183a43;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 700;
+    }
+  }
+
+  .contactActions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    p {
+      color: #48636b;
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 700;
+      max-width: 280px;
+    }
   }
 }
