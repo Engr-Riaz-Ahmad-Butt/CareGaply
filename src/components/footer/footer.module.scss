@@ -1,0 +1,100 @@
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.footer {
+  background-color: #1c2426;
+  padding-top: 50px;
+  @media (max-width: $sm) {
+    padding-top: 30px;
+  }
+  .footerInner {
+    display: flex;
+    gap: 76px;
+    border-bottom: 1px solid #FFFFFF24;
+    padding-bottom: 30px;
+    @media (max-width: $sm) {
+      flex-direction: column;
+      gap: 30px;
+    }
+    .left {
+        max-width: 380px;
+        width: 100%;
+                     @media (max-width: $sm) {
+    max-width: 100%;
+  }
+      img {
+        max-width: 192px;
+        height: 56px;
+      
+      }
+      .p {
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 14px;
+        color: #fff;
+        max-width: 360px;
+        width: 100%;
+               @media (max-width: $sm) {
+    max-width: 100%;
+  }
+      }
+    }
+    .right{
+      padding-left: 100px;
+        flex: 1;
+        display: flex;
+        gap: 32px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+             @media (max-width: 1035px) {
+    padding-left: 0px;
+      }
+        @media (max-width: $sm) {
+          gap: 20px;
+    }
+        img{
+            height: 14px;
+            width: 14px;
+        }
+        h5{
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        p{
+           
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            &:hover{
+              color: #4282D6;
+            }
+        }
+      
+    }
+  }
+  .footerBottom{
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+      @media (max-width: $sm) {
+      padding: 20px 0px 30px 0px;
+  }
+  
+    p{
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}

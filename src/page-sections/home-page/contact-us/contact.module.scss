@@ -1,0 +1,264 @@
+
+
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.contact {
+  padding: 80px 0px;
+  @media (max-width: $xs) {
+    padding: 40px 0px;
+  }
+  
+  .contactInfo1 {
+    padding: 7px;
+    background: rgba(0, 0, 0, 0.25); 
+  }
+
+  .grid {
+    @include gridTwo(60, 35);
+    align-items: center;
+    gap: 0%;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    
+    @media (max-width: $xs) {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      box-shadow: none;
+    }
+    
+    .left {
+      height: 100%;
+      border-radius: 15px;
+      position: relative;
+      
+      @media (max-width: $xs) {
+        width: 100%;
+        order: 1;
+        margin-bottom: 20px;
+      }
+      
+      .para {
+        font-size: 16px;
+        justify-content: start;
+        align-items: start;
+        width: 55%;
+        font-weight: 500;
+        line-height: 25px;
+        color: #fff;
+        
+        @media (max-width: $xs) {
+          font-size: 14px;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+      
+      h1 {
+        color: #fff;
+        letter-spacing: -0.5px;
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        
+        @media (max-width: $xs) {
+          font-size: 23px;
+        }
+      }
+      
+      h6 {
+        color: #fff;
+        letter-spacing: -0.5px;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 7px;
+        
+        @media (max-width: $xs) {
+          font-size: 16px;
+        }
+      }
+      
+      p {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        
+        @media (max-width: $xs) {
+          font-size: 14px;
+        }
+      }
+      
+      .flex {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        
+        .img {
+          height: 48px;
+          width: 48px;
+          background-color: #4282d6;
+          border-radius: 4px;
+          padding: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          @media (max-width: $xs) {
+            height: 40px;
+            width: 40px;
+          }
+          
+          img {
+            height: 24px;
+            width: 24px;
+            
+            @media (max-width: $xs) {
+              height: 20px;
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+    
+    .right {
+      border-radius: 15px;
+      padding: 50px;
+      background-color: #fff;
+      
+      @media (max-width: $xs) {
+        padding: 25px;
+        order: 2;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+      }
+      
+      h1 {
+        width: 100%;
+        color: #333;
+        letter-spacing: -0.5px;
+        font-size: 27px;
+        font-weight: 700;
+        
+        @media (max-width: $xs) {
+          font-size: 22px;
+          margin-bottom: 20px;
+        }
+      }
+      
+      .body {
+        .innerGrid {
+          @include gridTwo(20, 20);
+          margin: 20px 0px;
+          
+          @media (max-width: $xs) {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 15px 0px;
+          }
+        }
+        
+        button {
+          margin-top: 10px;
+          max-width: 100%;
+          
+          @media (max-width: $xs) {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg {
+  background-image: url(../../../assets/contact-us.jpg);
+  width: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  min-height: 500px;
+  padding: 40px;
+  background-position: center center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  
+  @media (max-width: $xs) {
+    padding: 25px;
+    min-height: auto;
+    border-radius: 15px 15px 0 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 15px;
+  
+  @media (max-width: $xs) {
+    border-radius: 15px 15px 0 0;
+  }
+}
+
+.contactInfoWrapper {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  max-width: 350px;
+  
+  @media (max-width: $xs) {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 0;
+    max-width: 100%;
+  }
+}
+
+.statusMessage {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  
+  @media (max-width: $xs) {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.contactWrapper {
+  margin-top: 20px;
+  
+  @media (max-width: $xs) {
+    margin-top: 15px;
+  }
+}

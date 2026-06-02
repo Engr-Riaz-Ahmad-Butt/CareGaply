@@ -1,0 +1,12 @@
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.children {
+  max-height: calc(100vh - 70px);
+  height: 100%;
+  padding-top: 70px;
+  @media (max-width: $sm) {
+    max-height: calc(100vh - 60px);
+    padding-top: 60px;
+  }
+}

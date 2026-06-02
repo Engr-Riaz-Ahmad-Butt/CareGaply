@@ -1,0 +1,166 @@
+.blogPage {
+  background: #ffffff;
+  color: #1a1a1a;
+  width: 100%;
+}
+
+/* ✅ Hero Section */
+.blogHero {
+  position: relative;
+  padding: 7rem 1.25rem 5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .blogHero {
+    padding: 7rem 1.25rem 0.5rem;
+  }
+}
+
+.heroBlobs {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    filter: blur(160px);
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  &:before {
+    background: #e3e6ff;
+    top: -200px;
+    left: -200px;
+  }
+
+  &:after {
+    background: #ffe1f1;
+    top: -220px;
+    right: -200px;
+  }
+}
+
+.blogTitle {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  color: #111;
+  line-height: 1.2;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.blogAuthorBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+  padding-left: 58px; // default for desktop/tablet
+}
+
+/* ✅ Mobile fix */
+@media (max-width: 767px) {
+  .blogAuthorBox {
+    padding-left: 0; // remove on mobile
+  }
+}
+
+.authorAvatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 20px rgba(50, 50, 93, 0.1);
+}
+
+.authorName {
+  font-size: 0.95rem;
+  color: #222;
+  font-weight: 500;
+
+  span {
+    color: #4a42f4;
+    font-weight: 700;
+  }
+}
+
+.authorRole {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+/* ✅ Blog Content Section */
+.blogContentWrapper {
+  max-width: 850px;
+  margin: 0 auto 6rem;
+  padding: 0 1rem;
+}
+
+/* Featured Image */
+.featuredImageBox {
+  margin: 2.5rem 0;
+}
+
+.featuredImage {
+  border-radius: 1.25rem;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 10px 40px rgba(100, 100, 100, 0.1);
+}
+
+/* ✅ Blog Body */
+.blogBody {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #222;
+
+  /* Better typography for rich text */
+  h2,
+  h3 {
+    margin-top: 2rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.3rem;
+    margin: 1.25rem 0;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+  }
+}
+
+/* ✅ Related Section Heading */
+.relatedTitle {
+  margin-top: 3.5rem;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+}
+
+/* ✅ Responsive Enhancements */
+@media (min-width: 768px) {
+  .blogAuthorBox {
+    justify-content: flex-start;
+  }
+  .blogHero {
+    text-align: left;
+  }
+}

@@ -1,0 +1,120 @@
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.headerBg {
+  background-image: url(../../../assets/header.png);
+  width: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  padding-top: 220px;
+  padding-bottom: 20px;
+  background-position: center top;
+
+  @media (max-width: 850px) {
+    height: 500px;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: $xs) {
+    height: 350px;
+    padding: 50px 0px;
+  }
+
+  .end {
+    display: flex;
+    flex-direction: column;
+    max-width: 460px;
+    width: 100%;
+    margin-left: auto;
+    @media (max-width: 850px) {
+      margin-left: 0px;
+    }
+  }
+
+  .helveticaHeading {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  h1 {
+    color: #fff;
+    letter-spacing: -1.5px;
+    font-weight: 800;
+    font-size: 70px;
+
+    @media (max-width: $xs) {
+      font-size: 59px;
+    }
+    @media (max-width: $xxs) {
+      font-size: 50px;
+    }
+  }
+
+  h6 {
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.3em;
+    letter-spacing: 0.5px;
+    color: #fff;
+    @media (max-width: $xs) {
+      font-size: 25px;
+    }
+    @media (max-width: $xxs) {
+      font-size: 20px;
+    }
+  }
+}
+
+.headerBg::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.headerContact {
+  z-index: 10;
+  position: relative;
+  padding-bottom: 80px;
+  @media (max-width: $xs) {
+    padding-bottom: 40px;
+  }
+  img {
+    margin-top: -45px;
+    max-width: 100%;
+    height: auto;
+  }
+  .message {
+    font-size: 17px;
+    color: #000;
+    font-weight: 400;
+    max-width: 210px;
+    width: 100%;
+    position: absolute;
+    top: 35px;
+    left: 15%;
+    @media (max-width: $sm) {
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+  }
+
+  .para {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0px;
+    max-width: 700px;
+    width: 100%;
+  }
+}

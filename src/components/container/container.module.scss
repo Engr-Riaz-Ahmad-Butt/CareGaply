@@ -1,0 +1,15 @@
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 1400px) {
+    padding: 0px 20px;
+  }
+  @media (max-width: $sm) {
+    padding: 0px 30px;
+  }
+}

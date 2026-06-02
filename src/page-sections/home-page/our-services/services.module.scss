@@ -1,0 +1,84 @@
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.services {
+  padding: 80px 0px;
+  background-color: #f7f7f7;
+  @media (max-width: $xs) {
+    padding: 40px 0px;
+  }
+  .flex {
+    @include gridThree(20, 20);
+
+ 
+
+    .card {
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+      padding: 30px 30px 30px 30px;
+      border-radius: 15px;
+      background-color: #fff;
+
+      h1 {
+        font-size: 27.2px;
+        color: #000000;
+        margin-bottom: 20px;
+        line-height: 35px;
+        font-weight: 600;
+
+        @media (max-width: $xs) {
+          font-size: 25px;
+        }
+      }
+      .inner {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        border-bottom: 1px solid #ddd;
+        padding: 6px 0px;
+           &:last-of-type {
+      border-bottom: none;
+    }
+        img {
+          height: 14px;
+          width: 14px;
+          margin-top: 5px;
+        }
+        p {
+          flex: 1;
+          color: #000;
+          font-size: 16px;
+          line-height: 25px;
+          font-weight: 400;
+          @media (max-width: $xs) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .announcement {
+        margin-top: 16px;
+        color: #000000;
+        font-size: 17px;
+        line-height: 27px;
+        font-weight: 500;
+        @media (max-width: $xs) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 30px;
+  @media (max-width: $xs) {
+    padding: 40px 30px;
+  }
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,29 @@
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.btn {
+  background-color: #4282d6;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  color: #fff;
+  padding: 12px 24px;
+  max-width: max-content;
+  width: 100%;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1px;
+  font-weight: 500;
+  height: 39px;
+  cursor: pointer;
+  transition: transform all .3s;
+
+  &:hover{
+    background-color: #03446B;
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,40 @@
+/* Importing the Manrope font for specific headings */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif; /* Default to Arial Regular */
+}
+
+/* Headings (h1, h2, etc.) should use Manrope */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Arial", sans-serif; /* For headings, keeping Manrope */
+  font-weight: bold; /* Ensure headings are in bold */
+}
+
+/* General text on body */
+html,
+body {
+  font-family: "Arial", sans-serif; /* Default font for body text */
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+/* Webkit scrollbar styles */
+*::-webkit-scrollbar {
+  width: 0px; /* width of vertical scrollbar */
+  height: 0px; /* height of horizontal scrollbar */
+}

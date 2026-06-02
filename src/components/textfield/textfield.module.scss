@@ -1,0 +1,31 @@
+@import "@/styles/_mixin.scss";
+@import "@/styles/_breakpoints.scss";
+
+.textfield {
+ 
+  input {
+     border: 1px solid #69727d;
+    width: 100%;
+    color: #1f2124;
+    font-weight: 400;
+    background-color: #fff;
+    box-shadow: none;
+    outline: none;
+        border-radius: 4px;
+    font-size: 16px;
+    min-height: 47px;
+    padding: 6px 16px;
+    height: 100%;
+
+    &:focus {
+      border: 1px solid #69727d;
+    }
+    &:focus-within {
+      border: 1px solid #69727d;
+    }
+    &::placeholder{
+        font-size: 14px;
+        color: #cdced0;
+    }
+  }
+}

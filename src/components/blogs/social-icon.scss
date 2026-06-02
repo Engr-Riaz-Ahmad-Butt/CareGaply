@@ -1,0 +1,120 @@
+.social-share-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  .social-share-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .social-share-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    @media (min-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f3f4f6;
+    color: #4b5563;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.facebook {
+      &:hover {
+        background-color: #1877f2;
+        color: white;
+      }
+    }
+
+    &.twitter {
+      &:hover {
+        background-color: #1da1f2;
+        color: white;
+      }
+    }
+
+    &.linkedin {
+      &:hover {
+        background-color: #0077b5;
+        color: white;
+      }
+    }
+
+    &.whatsapp {
+      &:hover {
+        background-color: #25d366;
+        color: white;
+      }
+    }
+
+    &.email {
+      &:hover {
+        background-color: #ea4335;
+        color: white;
+      }
+    }
+  }
+}
+
+// Mobile adjustments
+@media (max-width: 768px) {
+  .social-share-buttons {
+    flex-direction: row;
+    padding: 0.75rem 1rem;
+
+    .social-share-label {
+      font-size: 0.75rem;
+    }
+
+    .social-share-icons {
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

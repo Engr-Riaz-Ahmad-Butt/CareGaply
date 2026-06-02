@@ -1,0 +1,99 @@
+/* -------------------------------------------------
+   BlogFilterSection – pure CSS/SCSS (no Tailwind)
+   Matches screenshot: light bg, rounded cards, banners, arrows
+   Updated: narrower cards (via grid max-width), taller cards (via image height)
+   ------------------------------------------------- */
+
+/* -------------------------------------------------
+   Grid container
+   ------------------------------------------------- */
+.section {
+  background: #f8fafc;  /* Light blue-gray like screenshot */
+  padding: 2rem 0;
+  margin: 5%;
+  @media (min-width: 1024px) {
+    padding: 3.5rem 0;
+     margin: 5%;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  max-width: 960px;    /* Makes cards narrower overall (e.g., ~300px each with gaps) */
+  margin: 0 auto;      /* Centers the grid for narrower appearance */
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;  /* Tighter gap to match screenshot */
+  }
+}
+
+/* -------------------------------------------------
+   Card – shaped like screenshot
+   ------------------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;             /* White card on light bg */
+  border-radius: 0.5rem;        /* rounded-lg */
+  overflow: hidden;             /* For image rounding */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);  /* Subtle shadow */
+  transition: box-shadow .3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Image wrapper – banner style, increased height for taller cards */
+  .imageWrapper {
+    width: 100%;
+    height: 12rem;              /* Increased from 10rem for taller cards */
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* Placeholder – light gray like empty cards in screenshot */
+  .placeholder {
+    width: 100%;
+    height: 12rem;              /* Match increased image height */
+    background: #f0f4f8;        /* Light blue-gray */
+  }
+
+  /* Title – bold, with arrow inline */
+  .title {
+    font-family: "Manrope", sans-serif;  /* Respect global */
+    font-size: 1.125rem;        /* Slightly larger for headings */
+    font-weight: 700;
+    color: #1f2937;             /* Dark gray */
+    padding: 1rem 1.25rem 0.25rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;      /* Allow more lines if needed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    .arrow {
+      // color: #4b5563;           /* Gray arrow */
+      font-size: 1rem;
+    }
+  }
+
+  /* Author – small, gray, padded */
+  .author {
+    font-size: 0.875rem;
+    color: #6b7280;             /* gray-500 */
+    padding: 0 1.25rem 1.25rem;
+  }
+}
