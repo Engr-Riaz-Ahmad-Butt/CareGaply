@@ -19,6 +19,7 @@
       max-width: 170px;
       height: 50px;
       width: 100%;
+      object-fit: contain;
       @media (max-width: $sm) {
         max-width: 150px;
         height: 40px;

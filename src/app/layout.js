@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.svg" sizes="any" />
+        <link rel="icon" href="/favicon.png" sizes="any" />
         <title>CareGaply</title>
       </head>
       <body suppressHydrationWarning>
